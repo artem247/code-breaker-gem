@@ -10,6 +10,7 @@ module Codebreaker
     USER_NAME_SIZE = [3, 20].freeze
     CODE_SIZE = 4
     RESULT_DEFAULT = { exact_match: 0, number_match: 0, no_match: 0 }.freeze
+    CODE_RANGE = 1..6
 
     def initialize(player, difficulty)
       @secret_code = generate
@@ -51,7 +52,7 @@ module Codebreaker
 
     def hint
       @hints -= 1
-      hint_index = rand(0...4)
+      hint_index = rand(0...CODE_SIZE)
       hint = @hint_list[hint_index]
       @hint_list.delete_at(hint_index)
       hint
@@ -81,7 +82,7 @@ module Codebreaker
     def generate
       code = []
       CODE_SIZE.times do
-        code << (1..6).to_a.sample
+        code << (CODE_RANGE).to_a.sample
       end
       code.map(&:to_i)
     end
