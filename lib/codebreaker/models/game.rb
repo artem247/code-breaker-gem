@@ -52,20 +52,18 @@ module Codebreaker
 
     def hint
       @hints -= 1
-      hint_index = rand(0...CODE_SIZE)
+      hint_index = rand(0...@hint_list.size)
       hint = @hint_list[hint_index]
       @hint_list.delete_at(hint_index)
       hint
     end
 
     def create_stats
-      name = @player.name
-      difficulty = @difficulty
       attempts_total = attempts_amount(@difficulty)
       attempts_used = attempts_total - @attempts
       hints_total = hints_amount(@difficulty)
       hints_used = hints_total - @hints
-      [{ name: name, difficulty: difficulty, attempts_total: attempts_total,
+      [{ name: @player.name, difficulty: @difficulty, attempts_total: attempts_total,
          attempts_used: attempts_used, hints_total: hints_total, hints_used: hints_used }]
     end
 
