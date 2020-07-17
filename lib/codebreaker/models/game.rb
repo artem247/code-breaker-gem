@@ -37,12 +37,12 @@ module Codebreaker
       result
     end
 
-    def attempts_amount(difficulty)
-      DEFAULT_DIFFICULTIES.dig(difficulty, :attempts)
+    def attempts_amount
+      DEFAULT_DIFFICULTIES.dig(@difficulty, :attempts)
     end
 
-    def hints_amount(difficulty)
-      DEFAULT_DIFFICULTIES.dig(difficulty, :hints)
+    def hints_amount
+      DEFAULT_DIFFICULTIES.dig(@difficulty, :hints)
     end
 
     def valid_guess?(guess)
