@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.summary       = %q{Codebreaker gem for the codebreaker game API}
   spec.homepage      = "https://github.com/artem247/code-breaker-gem"
   spec.license       = "MIT"
-  spec.required_ruby_version = Gem::Requirement.new(">= 2.3.0")
+  spec.required_ruby_version = Gem::Requirement.new(">= 2.7.1")
 
   spec.metadata["allowed_push_host"] = "https://rubygems.org"
 

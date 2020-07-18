@@ -78,7 +78,7 @@ module Codebreaker
     private
 
     def generate
-      1..CODE_SIZE.map { CODE_RANGE.to_a.sample }.map(&:to_i)
+      (1..CODE_SIZE).map { CODE_RANGE.to_a.sample }.map(&:to_i)
     end
 
     def exact_match_size(code, answer)
