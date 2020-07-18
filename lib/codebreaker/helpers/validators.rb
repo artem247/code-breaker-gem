@@ -47,4 +47,5 @@ module Codebreaker
       raise OccurenceError,
             "#{object} is not present in #{array.inspect} collection"
     end
+  end
 end
