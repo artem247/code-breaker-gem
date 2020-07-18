@@ -2,17 +2,32 @@
 
 module Codebreaker
   module Validators
+    include Defaults
+
     def self.valid?(type, object)
       case type
-      when :user then validate_class(User, object)
-      when :difficulty
-        validate_class(Symbol, object)
-        validate_occurence(Game::DEFAULT_DIFFICULTIES.keys, object)
-      when :name
-        validate_class(String, object)
-        validate_string_size(Game::USER_NAME_SIZE, object)
+      when :user then validate_user(object)
+      when :difficulty then validate_difficulty(object)
+      when :guess then validate_guess(object)
       end
       true
+    end
+
+    def self.validate_user(object)
+      validate_class(User, object)
+      validate_class(String, object.name)
+      validate_string_size(USER_NAME_SIZE, object.name)
+    end
+
+    def self.validate_difficulty(object)
+      validate_class(Symbol, object.difficulty)
+      validate_occurence(DEFAULT_DIFFICULTIES.keys, object.difficulty)
+    end
+
+    def self.validate_guess(guess)
+      return if guess.size == CODE_SIZE &&
+              guess.match?(/[1-6]/)
+      raise "Guess should be"
     end
 
     def self.validate_class(object_class, object)
@@ -32,5 +47,4 @@ module Codebreaker
       raise OccurenceError,
             "#{object} is not present in #{array.inspect} collection"
     end
-  end
 end

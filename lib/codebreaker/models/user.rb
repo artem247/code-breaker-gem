@@ -2,8 +2,6 @@
 
 module Codebreaker
   class User
-    include Validators
-
     attr_reader :name
 
     def initialize(name)
