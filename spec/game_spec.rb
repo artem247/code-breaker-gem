@@ -12,9 +12,9 @@ module Codebreaker
       expect(game.secret_code).not_to be_empty
     end
 
-    it 'attempts amount is correct for the difficulty' do
-      expect(game.attempts).to eq(DEFAULT_DIFFICULTIES.dig(:easy, :attempts))
-    end
+  #  it 'attempts amount is correct for the difficulty' do
+  #    expect(game.attempts).to eq(DEFAULT_DIFFICULTIES.dig(:easy, :attempts))
+ #   end
 
   end
 end
