@@ -4,7 +4,7 @@ module Codebreaker
   class Difficulty
     include Defaults
   
-    attr_accessor :attempts
+    attr_accessor :attempts, :hints
     attr_reader :difficulty
   
     def initialize(chosen_difficulty)

@@ -37,8 +37,9 @@ module Codebreaker
     end
 
     def parse(guess)
-      result = GuessParser.new.check(@secret_code, guess)
-      @won = true if result.dig[:exact_match] == CODE_SIZE
+      result = GuessParser.new(@secret_code, guess).check_guess
+      @won = true if result.dig(:exact_match) == CODE_SIZE
+      result
     end
   end
 end

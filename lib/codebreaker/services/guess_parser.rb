@@ -9,10 +9,10 @@ module Codebreaker
 
     def check_guess
       result = RESULT_DEFAULT.dup
-      exact_match_size(secret_code, @answer).times { result[:exact_match] += 1 }
-      return result if exact_match_size(secret_code, @answer).times == code.length?
+      exact_match_size(@secret_code, @answer).times { result[:exact_match] += 1 }
+      return result if exact_match_size(@secret_code, @answer).times == CODE_SIZE
 
-      number_match_size(secret_code, answer).times { result[:number_match] += 1 }
+      number_match_size(@secret_code, @answer).times { result[:number_match] += 1 }
       no_match_size(result).times { result[:no_match] += 1 }
       result
     end

@@ -9,7 +9,7 @@ module Codebreaker
       when :name then validate_name(object)
       when :user then validate_user(object)
       when :difficulty_choice then validate_difficulty_choice(object)
-      when :difficulty_object then validate_difficulty(object)
+      when :difficulty_object then validate_difficulty_object(object)
       when :guess then validate_guess(object)
       end
       true
@@ -37,7 +37,9 @@ module Codebreaker
       return if guess.size == CODE_SIZE &&
                 guess.match?(/[1-6]/)
 
-      raise 'Guess should be'
+      raise GuessError, 
+        "Guess should be exactly #{CODE_SIZE} long, 
+        and consist of integers from #{CODE_RANGE.first} to #{CODE_RANGE.last}"
     end
 
     def self.validate_class(object_class, object)
