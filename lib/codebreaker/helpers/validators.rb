@@ -6,8 +6,10 @@ module Codebreaker
 
     def self.valid?(type, object)
       case type
+      when :name then validate_name(object)
       when :user then validate_user(object)
-      when :difficulty then validate_difficulty(object)
+      when :difficulty_choice then validate_difficulty_choice(object)
+      when :difficulty_object then validate_difficulty(object)
       when :guess then validate_guess(object)
       end
       true
@@ -15,19 +17,27 @@ module Codebreaker
 
     def self.validate_user(object)
       validate_class(User, object)
-      validate_class(String, object.name)
-      validate_string_size(USER_NAME_SIZE, object.name)
     end
 
-    def self.validate_difficulty(object)
-      validate_class(Symbol, object.difficulty)
-      validate_occurence(DEFAULT_DIFFICULTIES.keys, object.difficulty)
+    def self.validate_name(object)
+      validate_class(String, object)
+      validate_string_size(USER_NAME_SIZE, object)
+    end
+
+    def self.validate_difficulty_choice(object)
+      validate_class(Symbol, object)
+      validate_occurence(DEFAULT_DIFFICULTIES.keys, object)
+    end
+
+    def self.validate_difficulty_object(object)
+      validate_class(Difficulty, object)
     end
 
     def self.validate_guess(guess)
       return if guess.size == CODE_SIZE &&
-              guess.match?(/[1-6]/)
-      raise "Guess should be"
+                guess.match?(/[1-6]/)
+
+      raise 'Guess should be'
     end
 
     def self.validate_class(object_class, object)

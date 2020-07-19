@@ -1,5 +1,4 @@
 class Statistics
-
   def initialize(game)
     @name = game.player.name
     @difficulty = game.difficulty

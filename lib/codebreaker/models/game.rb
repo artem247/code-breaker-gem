@@ -20,7 +20,6 @@ module Codebreaker
       @attempts -= 1
     end
 
-
     def hint
       @hints -= 1
       hint_index = rand(0...@hint_list.size)
@@ -41,6 +40,5 @@ module Codebreaker
       result = GuessParser.new.check(@secret_code, guess)
       @won = true if result.dig[:exact_match] == CODE_SIZE
     end
-    
   end
 end
