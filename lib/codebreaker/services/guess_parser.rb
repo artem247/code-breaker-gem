@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Codebreaker
   class GuessParser
     include Defaults
@@ -20,7 +22,7 @@ module Codebreaker
     private
 
     def exact_match_size(code, answer)
-      exact_size = exact(code, answer).compact.size
+      exact(code, answer).compact.size
     end
 
     def number_match_size(code, answer)
