@@ -4,6 +4,7 @@ require 'simplecov'
 SimpleCov.start do
   enable_coverage :branch
 end
+SimpleCov.minimum_coverage 95
 
 require 'bundler/setup'
 require 'codebreaker'
