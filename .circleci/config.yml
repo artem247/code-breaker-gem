@@ -33,7 +33,7 @@ commands:
   run_specs:
     steps:
       name: run specs
-      command: rspec        
+      command: bundle exec rspec        
 
 jobs:
   lintering:
@@ -41,7 +41,7 @@ jobs:
     steps:
       - defaults
       - run_linters
-  run_specs:
+  specs:
     executor: default
     steps:
       - defaults
@@ -52,4 +52,5 @@ workflows:
   build:
     jobs:
       - lintering
+      - run_specs
     
