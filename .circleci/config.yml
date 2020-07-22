@@ -33,7 +33,8 @@ commands:
   run_specs:
     steps:
       name: run specs
-      command: bundle exec rspec        
+      command: |
+         bundle exec rspec        
 
 jobs:
   lintering:
