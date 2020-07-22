@@ -32,9 +32,9 @@ commands:
         command: bundle exec rubocop lib spec 
   run_specs:
     steps:
-      name: run specs
-      command: |
-         bundle exec rspec        
+    - run:
+        name: run_specs
+        command: bundle exec rspec    
 
 jobs:
   lintering:
