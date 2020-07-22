@@ -44,7 +44,7 @@ module Codebreaker
       end
 
       describe 'guess parsing is working correctly when answer is incorrect' do
-        let(:answer) { game.secret_code.shuffle }
+        let(:answer) { game.secret_code.rotate(2) }
 
         it 'if user haven\'t guessed then won? would return false' do
           game.parse(answer)
