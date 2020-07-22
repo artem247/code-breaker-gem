@@ -53,5 +53,5 @@ workflows:
   build:
     jobs:
       - lintering
-      - run_specs
+      - specs
     
