@@ -25,7 +25,7 @@ module Codebreaker
 
     def self.validate_guess(guess)
       return if guess.size == CODE_SIZE &&
-                /^[1-6]{4}$/.match?(guess.join(''))
+                /^[1-6]{4}$/.match?(guess)
 
       raise GuessError,
             "Guess should be exactly #{CODE_SIZE} long,
