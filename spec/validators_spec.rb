@@ -46,8 +46,8 @@ module Codebreaker
     end
 
     describe '.valid? :guess' do
-      let(:short_guess) { [3, 3, 3] }
-      let(:guess_outside_of_range) { [9, 3, 3, 8] }
+      let(:short_guess) { 333 }
+      let(:guess_outside_of_range) { 9338 }
 
       it 'Guesses that have less numbers then needed would raise an error' do
         expect { described_class.valid?(:guess, short_guess) }.to raise_error(GuessError)
