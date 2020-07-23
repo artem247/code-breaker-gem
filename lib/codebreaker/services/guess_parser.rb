@@ -37,7 +37,7 @@ module Codebreaker
     end
 
     def exact(secret_code, guess)
-      guess.zip(secret_code).map { |guess, secret| guess if guess == secret }
+      guess.zip(secret_code).map { |answer, secret| guess if answer == secret }
     end
 
     def no_match_size(result_hash)
