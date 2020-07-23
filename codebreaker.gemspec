@@ -30,6 +30,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rake', '~> 12.0'
   spec.add_development_dependency 'simplecov', '~> 0.18.5'
   spec.add_development_dependency 'rubocop', '~> 0.88.0'
+  spec.add_development_dependency 'rubocop-rspec', '~> 1.42.0'
   spec.add_development_dependency 'rubocop-performance', '~> 1.6.1'
   spec.add_development_dependency 'fasterer', '~> 0.8.3'
 

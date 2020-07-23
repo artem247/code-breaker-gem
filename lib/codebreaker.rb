@@ -3,7 +3,7 @@
 require 'yaml'
 require_relative 'codebreaker/helpers/defaults'
 require_relative 'codebreaker/helpers/validators'
-require_relative 'codebreaker/services/generate_code'
+require_relative 'codebreaker/services/code_generator'
 require_relative 'codebreaker/services/guess_parser'
 require_relative 'codebreaker/services/statistics'
 require_relative 'codebreaker/errors/class_error'

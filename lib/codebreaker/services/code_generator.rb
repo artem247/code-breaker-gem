@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Codebreaker
-  class GenerateCode
+  class CodeGenerator
     include Defaults
 
     def generate

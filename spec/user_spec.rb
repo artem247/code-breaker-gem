@@ -6,14 +6,16 @@ module Codebreaker
   RSpec.describe User do
     let(:proper_name) { 'name' }
     let(:short_name) { 'aa' }
-    let(:user) { User.new(proper_name) }
+    let(:user) { described_class.new(proper_name) }
 
-    it 'User object is correctly created' do
-      expect(user.class).to eq(User)
-    end
+    describe '.initialize' do
+      it 'User object is correctly created' do
+        expect(user.class).to eq(described_class)
+      end
 
-    it 'User name is available for reading' do
-      expect(user.name).to eq(proper_name)
+      it 'User name is available for reading' do
+        expect(user.name).to eq(proper_name)
+      end
     end
   end
 end

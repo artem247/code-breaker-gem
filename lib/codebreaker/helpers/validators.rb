@@ -15,7 +15,7 @@ module Codebreaker
 
     def self.validate_name(object)
       validate_class(String, object)
-      validate_string_size(USER_NAME_SIZE, object)
+      validate_array_size(USER_NAME_SIZE, object.split(''))
     end
 
     def self.validate_difficulty_choice(object)
@@ -29,15 +29,15 @@ module Codebreaker
 
       raise GuessError,
             "Guess should be exactly #{CODE_SIZE} long,
-        and consist of integers from #{CODE_RANGE.first} to #{CODE_RANGE.last}"
+            and consist of integers from #{CODE_RANGE.first} to #{CODE_RANGE.last}"
     end
 
     def self.validate_class(object_class, object)
       raise ClassError, "#{object.class} class must be equal #{object_class} " unless object.instance_of? object_class
     end
 
-    def self.validate_string_size(size, string)
-      return unless string.length > size.last || string.length < size.first
+    def self.validate_array_size(size, array)
+      return unless array.length > size.last || array.length < size.first
 
       raise StringSizeError,
             "String should be more then #{size.first} characters and less than #{size.last}"

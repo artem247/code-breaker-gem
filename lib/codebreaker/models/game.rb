@@ -7,7 +7,7 @@ module Codebreaker
     attr_reader :difficulty, :player, :secret_code, :attempts, :hints
 
     def initialize(player, difficulty)
-      @secret_code = GenerateCode.new.generate
+      @secret_code = CodeGenerator.new.generate
       @player = player
       @difficulty = difficulty
       @hints = difficulty.hints
