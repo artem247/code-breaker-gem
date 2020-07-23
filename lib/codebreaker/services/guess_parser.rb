@@ -33,11 +33,11 @@ module Codebreaker
     end
 
     def delete_exact(correct, code)
-      correct.zip(code).reject { |a, b| a == b }.flatten.compact
+      correct.zip(code).reject { |matched, not_matched| matched == not_matched }.flatten.compact
     end
 
     def exact(secret_code, guess)
-      guess.zip(secret_code).map { |a, b| a if a == b }
+      guess.zip(secret_code).map { |guess, secret| guess if guess == secret }
     end
 
     def no_match_size(result_hash)
