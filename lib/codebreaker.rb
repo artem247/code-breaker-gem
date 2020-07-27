@@ -13,6 +13,7 @@ require_relative 'codebreaker/errors/class_error'
 require_relative 'codebreaker/errors/guess_error'
 require_relative 'codebreaker/errors/occurence_error'
 require_relative 'codebreaker/errors/string_size_error'
+require_relative 'codebreaker/errors/validation_error'
 
 require_relative 'codebreaker/models/difficulty'
 require_relative 'codebreaker/models/game'

@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
 module Codebreaker
-  VERSION = '0.1.3'
+  class ValidationError < StandardError
+  end
 end

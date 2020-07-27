@@ -9,6 +9,8 @@ module Codebreaker
       when :name then validate_name(object)
       when :difficulty_choice then validate_difficulty_choice(object)
       when :guess then validate_guess(object)
+      else
+        raise ValidationError, "Such #{type} entity could not be validated"
       end
       true
     end
