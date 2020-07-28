@@ -57,5 +57,13 @@ module Codebreaker
         expect { described_class.valid?(:guess, guess_outside_of_range) }.to raise_error(GuessError)
       end
     end
+
+    describe '.valid? :invalid_command' do
+      let(:guess) { 4444 }
+
+      it 'Only permitted types of validation return true' do
+        expect { described_class.valid?(:invalid, guess) }.to raise_error(ValidationError)
+      end
+    end
   end
 end
